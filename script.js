@@ -47,7 +47,9 @@ async function getChefBirthday(id) {
     throw new Error(user.message);
   }
 
-  return user.birthDate;
+  const formattedDate = dayjs(user.birthDate).format("DD/MM/YYYY");
+
+  return formattedDate;
 }
 
 (async () => {
